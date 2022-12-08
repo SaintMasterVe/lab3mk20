@@ -30,4 +30,42 @@ class FunctionMTest {
             Assertions.fail("false");
         }
     }
+    @Test
+    public void nLess(){
+        func = new FunctionM(5);
+        boolean check = func.mathfunc() < 2147483647;
+        assertEquals(true, check);
+    }
+
+    @Test
+    public void xLess(){
+        func = new FunctionM(5);
+        boolean check = func.squarex() < 2147483647;
+        assertEquals(true, check);
+    }
+    @Test
+    public void nMore(){
+        func = new FunctionM(5);
+        boolean check = func.secondx() > -2147483647;
+        assertEquals(true, check);
+    }
+
+    @Test
+    public void xMore(){
+        func = new FunctionM(5);
+        boolean check = func.mathfunc() > -2147483647;
+        assertEquals(true, check);
+    }
+
+    @Test
+    public void functionCheckWrongResult(){
+        assertNotEquals(30, func.mathfunc(),0.5);
+    }
+
+    @Test
+    public void xNotNull(){
+        func = new FunctionM(5);
+        boolean check = func.secondx() != 0;
+        assertEquals(true, check);
+    }
 }
